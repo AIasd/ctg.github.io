@@ -191,7 +191,7 @@
             <div class="section-title">Goal Waypoint Rule</div>
             <div class="content">
                 <p>
-                    For the waypoint example, although BC+opt provides better rule satisfaction than CTG, both BC+opt and BITS+opt (the strongest two baselines for goal waypoint) predict curvy, unrealistic trajectories resulting in multiple collisions.
+                    Although BC+opt provides better rule satisfaction than CTG, both BC+opt and BITS+opt (the strongest two baselines for goal waypoint) predict curvy, unrealistic trajectories resulting in multiple collisions.
                     </br></br>
 
                     <table align=center width=900px>
@@ -229,6 +229,106 @@
                                 <td colspan='2'>
                                     <center>
                                         CTG (3.2)
+                                    </center>
+                                </td>
+                            </center>
+                        </tr>
+                        
+                    </table>
+                </p>
+            </div>
+
+            <div class="section-title">Off-Road</div>
+            <div class="content">
+                <p>
+                    Although all three methods generate trajectories without going offroad, CTG generates more realistic trajectories that are more likely to be observed in real-world traffic. In particular, BC+opt generates trajectories leading to multiple collisions. TrafficSim+opt generates trajectories less smooth with one vehicle (blue vehicle) goes to a lane with wrong direction. In contrast, CTG produce smooth trajectories with vehicles all going along correct lanes.
+                    </br></br>
+
+                    <table align=center width=900px>
+                        <tr>
+                            <center>
+                                <td colspan='2'>
+                                    <video width="300" height="300" controls muted autoplay loop>
+                                        <source src="./videos/offroad/offroad1/BC_opt/scene-0096.mp4" type="video/mp4">
+                                    </video>
+                                </td>                
+                                <td colspan='2'>
+                                    <video width="300" height="300" controls muted autoplay loop>
+                                        <source src="./videos/offroad/offroad1/TrafficSim_opt/scene-0096.mp4" type="video/mp4">
+                                    </video>
+                                </td> 
+                                <td colspan='2'>
+                                    <video width="300" height="300" controls muted autoplay loop>
+                                        <source src="./videos/offroad/offroad1/CTG/scene-0096.mp4" type="video/mp4">
+                                    </video>
+                                </td>                 
+                            </center>
+                        </tr>          
+                        <tr>
+                            <center>
+                                <td colspan='2'>
+                                    <center>
+                                        BC+opt
+                                    </center>
+                                </td>
+                                <td colspan='2'>
+                                    <center>
+                                        TrafficSim+opt                      
+                                    </center>
+                                </td>
+                                <td colspan='2'>
+                                    <center>
+                                        CTG
+                                    </center>
+                                </td>
+                            </center>
+                        </tr>
+                        
+                    </table>
+                </p>
+            </div>
+
+            <div class="section-title">StopSign + Offroad</div>
+            <div class="content">
+                <p>
+                    TrafficSim generates trajectories both not stopping within the corrsponding stop sign regions, going off road (blue vehicle), and leading to multiple collisions (e.g., green vehicle and orange vehicle). TrafficSim+opt generates trajectories with some vehicles not stopping in the stop regions (purple vehicle). In contrast, CTG produce trajectories without going off-road and all vehicles stop within the stop sign regions.
+                    </br></br>
+
+                    <table align=center width=900px>
+                        <tr>
+                            <center>
+                                <td colspan='2'>
+                                    <video width="300" height="300" controls muted autoplay loop>
+                                        <source src="./videos/stopsign_offroad/stopsign_offroad1/TrafficSim_2.349_0.2621/scene-0275.mp4" type="video/mp4">
+                                    </video>
+                                </td>                
+                                <td colspan='2'>
+                                    <video width="300" height="300" controls muted autoplay loop>
+                                        <source src="./videos/stopsign_offroad/stopsign_offroad1/TrafficSim_opt_0.1051_0.1736/scene-0275.mp4" type="video/mp4">
+                                    </video>
+                                </td> 
+                                <td colspan='2'>
+                                    <video width="300" height="300" controls muted autoplay loop>
+                                        <source src="./videos/stopsign_offroad/stopsign_offroad1/CTG_0.0006_0.1429/scene-0275.mp4" type="video/mp4">
+                                    </video>
+                                </td>                 
+                            </center>
+                        </tr>          
+                        <tr>
+                            <center>
+                                <td colspan='2'>
+                                    <center>
+                                        TrafficSim
+                                    </center>
+                                </td>
+                                <td colspan='2'>
+                                    <center>
+                                        TrafficSim+opt                      
+                                    </center>
+                                </td>
+                                <td colspan='2'>
+                                    <center>
+                                        CTG
                                     </center>
                                 </td>
                             </center>
