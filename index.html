@@ -168,17 +168,17 @@
                             <center>
                                 <td colspan='2'>
                                     <center>
-                                        BC+opt (1.3)
+                                        BC+opt (targer speed violation: 1.3 m/s)
                                     </center>
                                 </td>
                                 <td colspan='2'>
                                     <center>
-                                        TrafficSim+opt (1.1)                       
+                                        TrafficSim+opt (targer speed violation: 1.1 m/s)                       
                                     </center>
                                 </td>
                                 <td colspan='2'>
                                     <center>
-                                        CTG (0.3)
+                                        CTG (targer speed violation: 0.3 m/s)
                                     </center>
                                 </td>
                             </center>
@@ -218,17 +218,17 @@
                             <center>
                                 <td colspan='2'>
                                     <center>
-                                        BC+opt (2.2)
+                                        BC+opt (goal waypoint violation: 2.2 m)
                                     </center>
                                 </td>
                                 <td colspan='2'>
                                     <center>
-                                        BITS+opt (6.3)                      
+                                        BITS+opt (goal waypoint violation: 6.3)                      
                                     </center>
                                 </td>
                                 <td colspan='2'>
                                     <center>
-                                        CTG (3.2)
+                                        CTG (goal waypoint violation: 3.2)
                                     </center>
                                 </td>
                             </center>
@@ -291,7 +291,7 @@
             <div class="section-title">StopSign + Offroad</div>
             <div class="content">
                 <p>
-                    TrafficSim generates trajectories both not stopping within the corrsponding stop sign regions, going off road (blue vehicle), and leading to multiple collisions (e.g., green vehicle and orange vehicle). TrafficSim+opt generates trajectories with some vehicles not stopping in the stop regions (purple vehicle). In contrast, CTG produce trajectories without going off-road and all vehicles stop within the stop sign regions.
+                    TrafficSim generates trajectories both not stopping within the corrsponding stop sign regions, going off road (blue vehicle), and leading to multiple collisions (e.g., green vehicle and orange vehicle). TrafficSim+opt generates trajectories with some vehicles not stopping in the stop regions (purple vehicle). In contrast, CTG produce trajectories without going off-road and all vehicles stop within the stop sign regions. CTG has acehieved much lower average minimum speed within the stop regions (0.001 m/s VS 2.349 m/s and 0.105 m/s)
                     </br></br>
 
                     <table align=center width=900px>
@@ -318,17 +318,17 @@
                             <center>
                                 <td colspan='2'>
                                     <center>
-                                        TrafficSim
+                                        TrafficSim (stop sign violation: 2.349 m/s)
                                     </center>
                                 </td>
                                 <td colspan='2'>
                                     <center>
-                                        TrafficSim+opt                      
+                                        TrafficSim+opt (stop sign violation: 0.105 m/s)                  
                                     </center>
                                 </td>
                                 <td colspan='2'>
                                     <center>
-                                        CTG
+                                        CTG (stop sign violation: 0.001 m/s)
                                     </center>
                                 </td>
                             </center>
@@ -338,6 +338,55 @@
                 </p>
             </div>
 
+            <div class="section-title">Goal Waypoint + Target Speed</div>
+            <div class="content">
+                <p>
+                    TrafficSim generates trajectories with one vehicle not reaching goal waypoint (gray vehicle). For BITS, while vehicles reach waypoints, the gray vehicle collides with the pink vehicle. In contrast, CTG produce trajectories reaching waypoints without collisions. Furthermore, CTG generated trajectories best satisfy the target speed (with smallest average speed deviation 0.161 m/s, compared with 0.312 m/s and 0.285 m/s).
+                    </br></br>
+
+                    <table align=center width=900px>
+                        <tr>
+                            <center>
+                                <td colspan='2'>
+                                    <video width="300" height="300" controls muted autoplay loop>
+                                        <source src="./videos/goal_waypoint_100_target_speed/goal_waypoint_100_target_speed1/TrafficSim_1.015_0.312/scene-0108.mp4" type="video/mp4">
+                                    </video>
+                                </td>                
+                                <td colspan='2'>
+                                    <video width="300" height="300" controls muted autoplay loop>
+                                        <source src="./videos/goal_waypoint_100_target_speed/goal_waypoint_100_target_speed1/BITS_0.391_0.285/scene-0108.mp4" type="video/mp4">
+                                    </video>
+                                </td> 
+                                <td colspan='2'>
+                                    <video width="300" height="300" controls muted autoplay loop>
+                                        <source src="./videos/goal_waypoint_100_target_speed/goal_waypoint_100_target_speed1/CTG_0.315_0.161/scene-0108.mp4" type="video/mp4">
+                                    </video>
+                                </td>                 
+                            </center>
+                        </tr>          
+                        <tr>
+                            <center>
+                                <td colspan='2'>
+                                    <center>
+                                        TrafficSim (goal waypoint violation: 1.015 m, target speed violation: 0.312 m/s)
+                                    </center>
+                                </td>
+                                <td colspan='2'>
+                                    <center>
+                                        BITS (goal waypoint violation: 0.391 m, target speed violation: 0.285 m/s)                
+                                    </center>
+                                </td>
+                                <td colspan='2'>
+                                    <center>
+                                        CTG (goal waypoint violation: 0.315 m, target speed violation: 0.161 m/s)
+                                    </center>
+                                </td>
+                            </center>
+                        </tr>
+                        
+                    </table>
+                </p>
+            </div>
 
             <!-- <div class="section-title">Citation</div>
             <div class="section bibtex">
